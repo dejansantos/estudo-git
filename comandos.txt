@@ -1,0 +1,123 @@
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Comandos git
+
+git init
+git add .
+git status
+git commit -m "comentário"
+
+git log --help
+git log
+git log --oneline
+git log -p 
+git log --pretty="format:%H"
+git log --pretty="format:%h %s"
+git log --pretty="format:%h %s %ae"
+
+*git config --local user.name "Dejan Santos"
+git config  user.name 
+git config  user.email
+
+
+Deixar de monitorar um arquivo ou um diretório
+Criar o arquivo  .gitiginore * e esrever o nome do arquivo ou diretório
+
+Quando gerar um commit?
+Nunca commitar código que não funcione!
+Quando uma funcionalidade for add
+Quando um bug for resolvido
+
+
+
+
+Compartilhar repositório
+
+Criar uma pasta ex: mkdir servidor && cd  servidor 
+
+Definir novo repositório remoto:
+git init --bare
+Initialized empty Git repository in /home/dejan/Documentos/git-e-github/servidor/
+
+
+listar repositório remoto
+
+git remote
+
+
+
+Adicionar repositório local
+git remote add  local /home/dejan/Documentos/git-e-github/servidor/
+
+
+git remote -v
+
+
+Clonar repositório
+
+Criar diretório 
+
+mkdir joao && cd  joao && git clone /home/dejan/Documentos/git-e-github/servidor/
+
+
+
+Enviar dados para o sevidor onde os todos vão trabalhar
+
+*git push  local  master  
+
+Counting objects: 9, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (9/9), 1.00 KiB | 1.00 MiB/s, done.
+Total 9 (delta 1), reused 0 (delta 0)
+To /home/dejan/Documentos/git-e-github/servidor/
+ * [new branch]      master -> master
+
+
+/home/dejan/Documentos/git-e-github/joao/servidor/
+
+git remote
+origin
+
+git remote rename  origin local *
+
+git remote
+local
+
+
+git pull local master  *
+remote: Counting objects: 9, done.
+remote: Compressing objects: 100% (6/6), done.
+remote: Total 9 (delta 1), reused 0 (delta 0)
+Unpacking objects: 100% (9/9), done.
+From /home/dejan/Documentos/git-e-github/servidor
+ * branch            master     -> FETCH_HEAD
+ * [new branch]      master     -> local/master
+
+
+Editar o arquivo index na pasta joão
+
+verificar o status: git status
+add: git add index.html
+commitar: git commit -m "Renomeando curso de Integração contínua"
+
+
+
+
+cd ../../dejan
+ git status
+ git pull local master
+ git log -p
+
+ iff --git a/index.html b/index.html
+index d623ec6..58b1dd9 100644
+--- a/index.html
++++ b/index.html
+@@ -12,7 +12,7 @@
+                <li>Vagrant </li>
+                <li>Docker</li>
+                <li>Ansible</li>
+-               <li>Integração Contínua</li>
++               <li>Integração Contínua: Maturidade e Produtividade no Desenvolvimento de Software</li>
+        </ul>
+ </body>
+ </html>
